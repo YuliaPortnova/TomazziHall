@@ -7,6 +7,12 @@ body {
   background-color: #fffdf8;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 .wrapper {
   width: 1150px;
   margin: 0 auto;
@@ -27,6 +33,7 @@ body {
 
 .menu-primary-container .menu {
   display: flex;
+  flex-wrap: wrap;
   gap: 40px;
   list-style-type: none;
   margin: 0;
@@ -41,19 +48,64 @@ body {
   padding: 6px 0 7px;
 }
 
+.menu-primary-container a:hover {
+  color: #9f7303;
+}
+
+.menu-primary-container .menu-item-has-children {
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.menu-item-has-children:focus-within .sub-menu {
+  display: grid;
+}
+
 .menu-primary-container .menu-item-has-children::after {
   content: "";
   display: block;
   width: 13px;
   height: 9px;
   background-image: url("/images/arrow-down.svg");
+  flex-shrink: 0;
 }
 
 .menu-primary-container .sub-menu {
+  display: none;
+  gap: 23px;
   list-style-type: none;
   margin: 0;
-  padding: 0;
+  padding: 24px 16px 32px;
   position: absolute;
+  top: 43px;
+  left: 96px;
+  width: 200px;
+  z-index: 1;
+  background-color: #ffffff;
+  box-shadow: 0px 2px 4px rgba(97, 97, 97, 0.18), 0px 4px 8px rgba(97, 97, 97, 0.18);
+}
+
+.menu-primary-container .menu-item__button a {
+  border: 1px solid #9f7303;
+  border-radius: 8px;
+  padding-left: 23px;
+  padding-right: 23px;
+}
+
+.menu-primary-container .menu-item__button a:hover {
+  background-color: #fffdf8;
+  color: #000000;
+}
+
+.menu-primary-container .menu-item__button a:active {
+  background-color: #fff7e3;
+  color: #000000;
+}
+
+.menu-primary-container .current-menu-item a {
+  color: #684C05;
 }
 
 .main-area {
