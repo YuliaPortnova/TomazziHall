@@ -73,20 +73,37 @@
       </div>
     </section>
     <section class="review">
-      <div class="wrapper">
+      <div class="wrapper review__wrapper">
         <h2 class="review__title">Оставить отзыв</h2>
         <div class="review__form">
           <div class="wpcf7">
             <form class="wpcf7__form" action="">
-
-          </div>
+              <p>
+                <span class="wpcf7-form-control-wrap">
+                  <textarea class="wpcf7-textarea" rows="4" placeholder="Расскажите, что вы думаете о проекте"></textarea>
+                </span>
+              </p>
+              <p>
+                <span class="wpcf7-form-control-wrap">
+                  <input type="text" class="wpcf7-text" placeholder="Ваше имя">
+                </span>
+              </p>
+              <div class="review__submit-area">
+                <p>
+                  <input type="submit" value="Отправить" class="wpcf7-submit">
+                  <span class="ajax-loader"></span>
+                </p>
+                <div class="review__text"> <!-- div лучше параграфа или span, так как к div CF7 не добавляет оберток -->
+                  Отзыв будет добавлен после проверки модератором
+                </div>
+              </div>
+            </form>
+          </div>    
         </div>
-
-        </form>
       </div>
     </section>
     <section class="reviews">
-      <div class="wrapper">
+      <div class="wrapper reviews__wrapper">
         <ul class="reviews__list">
           <li class="reviews__item">
             <div class="reviews__image-container">
@@ -108,7 +125,7 @@
           </li>
           <li class="reviews__item">
             <div class="reviews__image-container">
-              <img src="" alt="Фото автора отзыва." width="50" height="50">
+              <img src="images/photo2.jpg" alt="Фото автора отзыва." width="50" height="50" onerror="this.style.visibility = 'hidden'">
             </div>
             <div class="reviews__content">
               <p class="reviews__author">Светлана</p>
